@@ -1,0 +1,12 @@
+<div class="todos"> <h3> Colocar mensagem</h3></div>
+
+<p style="color: green"><%= notice %></p>
+
+<%= render @formulario %>
+
+<div>
+  <%= link_to "Editar contato", edit_formulario_path(@formulario) %> |
+  <%= link_to "Lista de contatos", formularios_path %>
+
+  <%= button_to "Excluir contato", @formulario, method: :delete %>
+</div>

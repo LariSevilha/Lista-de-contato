@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Contatos</h1>
+
+<div id="formularios">
+  <% @formularios.each do |formulario| %>
+    <%= render formulario %>
+    <p>
+      <%= link_to "Mostrar contato", formulario %>
+    </p>
+  <% end %>
+</div>
+<button type="button"> <%= link_to "Novo contato", new_formulario_path %></button>
+
