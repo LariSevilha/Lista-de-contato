@@ -10,8 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_122904) do
-  
+ActiveRecord::Schema[7.0].define(version: 2022_05_09_120714) do
+  create_table "exemples", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "forms", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "cell"
+    t.string "email"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "company"
+  end
+
   create_table "formularios", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -23,10 +39,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_122904) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "homes", force: :cascade do |t|
+    t.string "index"
+    t.string "show"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "nome"
     t.string "senha"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "senha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
