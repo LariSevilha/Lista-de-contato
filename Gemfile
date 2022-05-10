@@ -11,7 +11,7 @@ gem "friendly_id"
 gem "devise"
 gem "kaminari", "~> 1.2"
 gem 'rails-i18n' ,  "~> 7.0.0"
-gem 'elasticsearch'
+gem 'elasticsearch', "~> 7"
 gem 'searchkick'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

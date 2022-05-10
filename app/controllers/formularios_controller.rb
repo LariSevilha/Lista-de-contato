@@ -3,12 +3,6 @@ class FormulariosController < ApplicationController
 
   # GET /formularios or /formularios.json
   def index
-    search = params[:term].present? ? params[:term] : new
-    @formularios = if search
-      Formulario.where("title LIKE ? OR plot LIKE ?", "%#{search}", "%#{search}")
-    else
-      Formulario.all
-    end
     @formularios = Formulario.where(status: true)
     @formularios = Formulario.page(params[:page]).per(4)
   end
