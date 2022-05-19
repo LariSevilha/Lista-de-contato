@@ -3,8 +3,7 @@ class SearchController < ApplicationController
   def index
     @msg = ""
 
-    @page_title = "Busca - #{site_name}"
-    logo
+    @page_title = "Busca "
   end
 
   def search
@@ -15,19 +14,12 @@ class SearchController < ApplicationController
     order = {}
 
     conditional = {}
-
-    order[:date_publish] = "desc"
-
-    conditional[:status] = true
-
-    content_builder = ContentBuilder
-    .search(q, operator: "and", where: conditional, order: order)
-
+ 
     formulario = Formularios.search(q, order: order)
  
     array_search = []
 
-    albums.each do |n|
+    formulario.each do |n|
       array_search << {
         name: n.name,
         email: n.email,
@@ -41,7 +33,7 @@ class SearchController < ApplicationController
       array_search, total_count: @result_search_size
     ).page(params[:page])
 
-    @page_title = "Busca - #{site_name}"
-    logo
+    @page_title = "Busca "
+    
   end
 end

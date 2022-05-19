@@ -1,4 +1,4 @@
- <div class="container">
+<div class="container">
   <section class="page search">
     <div class="page__header page__header--center">
       <h1 class="page__title">Veja o que encontramos</h1>
@@ -15,18 +15,16 @@
       <% @result_search.each do |result_search| %>
         <section class="fc-item fc-item--border fc-figure--clip">
           <%= link_to url_link(result_search), class: 'fc-link' do %>
-            <% if result_search[:image].present? %>
-              <figure class="fc-figure">
-                <%= image_tag result_search[:image], class: 'fc-image' %>
-              </figure>
+            <% if result_search[:name].present? %>
+                <%=result_search[:name] %>
             <% end %>
 
             <div class="fc-time fc-time--small">
-              <span class="ion-android-time icon--left"></span> <%= result_search[:date_publish] %>
+              <span class="ion-android-time icon--left"></span> <%= result_search[:email] %>
             </div>
 
             <h2 class="fc-caption fc-caption--small">
-              <%= type_name(result_search[:type], result_search[:category]) %>
+              <%= type_name(result_search[:type], result_search[:phone]) %>
             </h2>
 
             <h1 class="fc-title">

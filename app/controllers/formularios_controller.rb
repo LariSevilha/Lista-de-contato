@@ -3,7 +3,6 @@ class FormulariosController < ApplicationController
 
   # GET /formularios or /formularios.json
   def index
-    @formularios = Formulario.where(status: true)
     @formularios = Formulario.page(params[:page]).per(4)
   end
 
@@ -69,3 +68,4 @@ class FormulariosController < ApplicationController
       params.require(:formulario).permit(:name, :email, :phone, :cell, :icon, :company)
     end
 end
+
