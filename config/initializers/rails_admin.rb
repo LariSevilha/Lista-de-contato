@@ -38,5 +38,18 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+    config.model "User" do
+      navigation_label "Usuarios"
+       list do
+         field :id
+         field :name
+         field :email
+      end
+     edit do 
+        field :name
+        field :email
+        field :password 
+      end
+    end 
   end
 end

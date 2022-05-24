@@ -19,9 +19,12 @@
     <%= formulario.cell %>
   </p>
 
+
   <p>
     <strong>Icone da empresa:</strong>
-    <%= formulario.icon %>
+        <% if formulario.icon.present? %>
+              <%= image_tag(formulario.icon.url) %>
+        <%end%>
   </p>
 
   <p>

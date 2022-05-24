@@ -4,7 +4,7 @@ class FormulariosController < ApplicationController
   # GET /formularios or /formularios.json
   def index
     @formularios = Formulario.page(params[:page]).per(4)
-  end
+   end
 
   # GET /formularios/1 or /formularios/1.json
   def show
