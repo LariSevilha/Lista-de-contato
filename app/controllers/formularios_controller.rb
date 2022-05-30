@@ -8,6 +8,8 @@ class FormulariosController < ApplicationController
 
   # GET /formularios/1 or /formularios/1.json
   def show
+    @form = Formulario.find(params[:id])
+
   end
 
   # GET /formularios/new
@@ -61,6 +63,7 @@ class FormulariosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_formulario
       @formulario = Formulario.find(params[:id])
+ 
     end
 
     # Only allow a list of trusted parameters through.

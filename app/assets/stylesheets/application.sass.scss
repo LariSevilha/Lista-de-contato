@@ -1,12 +1,4 @@
 // Entry point for your Sass build
-@import "formularios.scss";
-@import "footer.scss";
-body {
-  background-color: rgb(245, 252, 255);
-}
-h1 {
-  color: black;
-}
-.navbar-brand {
-  background-color: black;
-}
+@import "formularios";
+@import "footer";
+@import "devise";

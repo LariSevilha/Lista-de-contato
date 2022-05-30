@@ -1,35 +1,25 @@
-<div id="<%= dom_id formulario %>">
-  <p>
+<div class="form-main" id="<%= dom_id formulario %>">
+  <div class="form-main-div">
     <strong>Nome:</strong>
-    <%= formulario.name %>
-  </p>
-
-  <p>
     <strong>Email comercial:</strong>
-    <%= formulario.email %>
-  </p>
-
-  <p>
     <strong>Telefone fixo:</strong>
-    <%= formulario.phone %>
-  </p>
-
-  <p>
     <strong>Celular:</strong>
-    <%= formulario.cell %>
-  </p>
-
-
-  <p>
     <strong>Icone da empresa:</strong>
-        <% if formulario.icon.present? %>
-              <%= image_tag(formulario.icon.url) %>
-        <%end%>
-  </p>
-
-  <p>
     <strong>Empresa:</strong>
-    <%= formulario.company %>
-  </p>
+  </div>
 
+
+<div class="form-main-div">
+  <span><%= formulario.name %></span>  
+  <span><%= formulario.email %></span>
+  <span><%= formulario.phone %></span>
+  <span><%= formulario.cell %></span>
+  <span class="form-image">
+    <% if formulario.icon.present? %>
+        <%= image_tag(formulario.icon.url) %>
+    <%end%>
+  </span>
+  <span> <%= formulario.company %></span>   
+  </div>
 </div>
+ 

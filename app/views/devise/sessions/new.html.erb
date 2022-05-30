@@ -1,24 +1,33 @@
-<h2>Faça login</h2>
+<div class="img">
+<img src="https://www.novanews.com.br/assets/admin/agenciaw3-3e8a88906c5c0c9364014fb710a054f4f5f1e56ebcf8e91e08351a18a9ad3bba.png" alt="" width="90" height="90">
+<div class="main">
+  <div class="form-form">
+    <h2 class="title">Entrar</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email, "E-mail" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email, "E-mail" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label  :password, "Senha" %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <div class="m">
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, "Lembrar login"%>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Entrar"%>
+        </div>
+        <% end %>
+      </div>
   </div>
-
-  <div class="field">
-    <%= f.label  :password, "Senha" %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, "Lembrar login"%>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Entrar" %>
-  </div>
-<% end %>
+  </div> 
+</div>
