@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :formularios
     # Routes Search
     get '/search' => 'search#index', as: :searchs
-    get '/search' => 'search#search', as: :search
+    get '/search/result' => 'search#search', as: :search
 
     
     get "formularios/:id" => "formularios#show", as: :formularios_show

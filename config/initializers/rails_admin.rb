@@ -1,4 +1,13 @@
 RailsAdmin.config do |config|
+
+  ## == Devise ==
+  ## Verifica se está autenticado
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
+
+
   config.asset_source = :sprockets
 
   ### Popular gems integration

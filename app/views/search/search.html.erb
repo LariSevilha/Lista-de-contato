@@ -2,52 +2,34 @@
   <section class="page search">
     <div class="page__header page__header--center">
       <h1 class="page__title">Veja o que encontramos</h1>
-
-      <p class="page__summary">
-        Você buscou por <strong>"<%= params[:q] %>"</strong>
-        e parece que encontramos <%= @result_search_size if @result_search_size %> resultado(s).
-      </p>
     </div>
 
-    <%= render 'searchs/form' %>
-
+<div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-mdb-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
     <% if @result_search.present? %>
       <% @result_search.each do |result_search| %>
-        <section class="fc-item fc-item--border fc-figure--clip">
-          <%= link_to url_link(result_search), class: 'fc-link' do %>
-            <% if result_search[:name].present? %>
-                <%=result_search[:name] %>
-            <% end %>
-
-            <div class="fc-time fc-time--small">
-              <span class="ion-android-time icon--left"></span> <%= result_search[:email] %>
-            </div>
-
-            <h2 class="fc-caption fc-caption--small">
-              <%= type_name(result_search[:type], result_search[:phone]) %>
-            </h2>
-
-            <h1 class="fc-title">
-              <%= strip_tags result_search[:title] %>
-            </h1>
-          <% end %>
-        </section>
-      <% end %>
-    <% else %>
-      <div class="text--center">
-        <div class="page__header">
-          <h3 class="page__title">Ops!</h3>
-        </div>
-
-        <div class="page__text page__text--large">
-          <p>
-            Parece que não encontramos o que você procura. <br>
-            <strong>Por que não tenta novamente?</strong>
-          </p>
-        </div>
+        <img class="rounded-circle shadow-1-strong mb-4"
+          <% if result_search.icon.present? %>
+              <%= image_tag(result_search.icon.url) %>
+          <%end%>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-8">
+          <h5 class="mb-3"> <p><%= result_search.name%></p></h5>
+          <p>  <%= result_search.phone%> </p>
+          <p>  <%= result_search.email%> </p>
+          <p>  <%= result_search.company%></p>
       </div>
-    <% end %>
+    </div>
+      <% end %>
+      <%end%>
 
-    <%= paginate @result_search if @result_search %>
+     
+   <div class="btn">
+  <%# Volta a todos os formulários %>
+  <button type="button" class="btn btn-primary"> <%= link_to "Voltar", formularios_path %></button>
+  </div>
+
+ 
   </section>
 </div>

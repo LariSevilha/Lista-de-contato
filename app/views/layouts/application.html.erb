@@ -10,31 +10,36 @@
 
      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   </head>
-  <body>
-    <header class="header"> 
-        <%# <#nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <nav class="navbar navbar-dark bg-dark">
-            <div class="container">
-              <a class="navbar-brand" href="/">
-                <img src="https://www.agenciaw3.digital/assets/logo-1727853ccde951f29f75e12aa72e67b53b24634737ddc19acd9e766b1d965bcc.png" alt="" width="290" height="54">
-              </a>
-            </div>
-          </nav>
-          <%= link_to searchs_path, class: 'header__btn header__btn--search' do %>
-            <%#  <span class="header__text">Buscar</span>
-            <span class="header__icon ion-search"></span>
-          <% end %>
-        <%# </nav> %>
+  <body >
+  
+        <header class="header"> 
+           <nav class="navbar navbar-dark bg-dark">
+              <div class="container">
+                <a class="navbar-brand" href="/">
+                  <img src="https://www.agenciaw3.digital/assets/logo-1727853ccde951f29f75e12aa72e67b53b24634737ddc19acd9e766b1d965bcc.png" alt="" width="290" height="54">
+                 </a>
+              </div>
+           <% if current_user.present? %> 
+              <div class="d" style="padding: 10px 80px;">
+                  <form class="form search__form", style="display:flex" action="<%= search_path %>"> 
+                   <% autofocus = "autofocus" unless params[:q] %>
+
+                   <input class="form__input search__input" type="form" name="q" value="<%= params[:q] %>" id="form" <%= autofocus %> placeholder="O que você procura?">
+                  <button class="btn btn-outline-success" type="submit">Procurar</button>
+                  </form>
+               </div>
+            <%end%>
+              
         <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         
-        <div class="center-forms">
-          <%= yield %>
-        </div>
+           </nav>
+        
+    
+          <%= yield %> 
+        
     </header>
-
-
-    <%# <%= render "layouts/content/footer"%> 
+ 
   </body>
 </html>

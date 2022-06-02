@@ -6,6 +6,13 @@ a {
   display: flex;
   justify-content: center;
 }
+.center-forms {
+  align-content: center;
+  padding: 18px 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .form-main-div {
   display: flex;
   flex-direction: column;
@@ -32,4 +39,18 @@ a {
 }
 .pagination {
   justify-content: center;
+  margin: 20px;
+}
+.show-contact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  &-image {
+    width: 110px;
+
+    img {
+      width: 100%;
+    }
+  }
 }
