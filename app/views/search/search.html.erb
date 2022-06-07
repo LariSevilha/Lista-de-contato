@@ -4,32 +4,32 @@
       <h1 class="page__title">Veja o que encontramos</h1>
     </div>
 
-<div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-mdb-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    <% if @result_search.present? %>
-      <% @result_search.each do |result_search| %>
-        <img class="rounded-circle shadow-1-strong mb-4"
-          <% if result_search.icon.present? %>
-              <%= image_tag(result_search.icon.url) %>
+    <%# <div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-mdb-ride="carousel"> %>
+      <div class="show-contact">
+          <% if @result_search.present? %>
+            <% @result_search.each do |result_search| %>
+            <div class="show-contact-card">
+              <div class="show-contact-image">
+                <% if result_search.icon.present? %>
+                  <%= image_tag(result_search.icon.url, class:"rounded-circle shadow-1-strong mb-4") %>
+                <%end%>
+              </div>
+                  <p><%= result_search.name%></p>
+                  <p>  <%= result_search.phone%> </p>
+                  <p>  <%= result_search.email%> </p>
+                  <p>  <%= result_search.company%></p>
+              </div>
+            <% end %>
           <%end%>
-    <div class="row d-flex justify-content-center">
-      <div class="col-lg-8">
-          <h5 class="mb-3"> <p><%= result_search.name%></p></h5>
-          <p>  <%= result_search.phone%> </p>
-          <p>  <%= result_search.email%> </p>
-          <p>  <%= result_search.company%></p>
+        </div>
       </div>
+   
+
+    <div class="btn">
+      <%# Volta a todos os formulários %>
+      <button type="button" class="btn btn-primary"> <%= link_to "Voltar", formularios_path %></button>
     </div>
-      <% end %>
-      <%end%>
-
-     
-   <div class="btn">
-  <%# Volta a todos os formulários %>
-  <button type="button" class="btn btn-primary"> <%= link_to "Voltar", formularios_path %></button>
-  </div>
-
- 
   </section>
 </div>
+
+ 

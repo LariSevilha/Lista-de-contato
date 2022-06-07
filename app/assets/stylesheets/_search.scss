@@ -1,0 +1,13 @@
+.carousel-item-active {
+  box-shadow: rgba(119, 119, 128, 0.2) 0px 7px 29px 0px;
+  width: 300px;
+  margin: 20px;
+  &-image {
+    width: 110px;
+    margin: 20px 0;
+  }
+}
+.carousel-inner {
+  display: flex;
+  justify-content: center;
+}

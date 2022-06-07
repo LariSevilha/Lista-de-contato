@@ -60,5 +60,23 @@ RailsAdmin.config do |config|
         field :password 
       end
     end 
+    config.model "Formulario" do
+      navigation_label "Formularios"
+       list do
+         field :id
+         field :name
+         field :company
+          
+      end
+     edit do 
+        field :name
+        field :email
+        field :phone 
+        field :cell 
+        field :company 
+        field :icon
+
+      end
+    end 
   end
 end

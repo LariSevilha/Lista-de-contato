@@ -4,9 +4,10 @@ class CreateFormularios < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :email
       t.string :phone
-      t.string :cell
-      t.string :icon
+      t.string :cell 
       t.string :company
+      t.string :icon
+     
 
       t.timestamps
     end

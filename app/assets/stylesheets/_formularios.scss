@@ -1,6 +1,10 @@
 a {
   text-decoration: none;
   color: black;
+  color: white;
+}
+a:hover {
+  color: white;
 }
 .form-main {
   display: flex;
@@ -36,6 +40,7 @@ a {
 }
 .btn {
   display: flex;
+  justify-content: center;
 }
 .pagination {
   justify-content: center;
@@ -43,11 +48,26 @@ a {
 }
 .show-contact {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  gap: 18px;
+  p {
+    margin: 0;
+  }
+  &-card {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 300px;
+  }
   &-image {
     width: 110px;
+    margin: 20px 0;
+    align-self: center;
 
     img {
       width: 100%;
